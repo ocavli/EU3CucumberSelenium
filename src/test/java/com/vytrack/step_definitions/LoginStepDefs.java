@@ -77,6 +77,7 @@ public class LoginStepDefs {
     //#driver, storemanager, salesmanager
     //    # you will have one step definition and it will handle different usertype
     public void the_user_logged_in_as(String username) {
+        Driver.get().get(ConfigurationReader.get("url"));
         LoginPage loginPage = new LoginPage();
         String password;
         switch(username.toLowerCase()) {
@@ -85,12 +86,12 @@ public class LoginStepDefs {
                 password = ConfigurationReader.get("driver_password");
                 loginPage.login(username, password);
                 break;
-            case "salesmanager":
+            case "sales manager":
                 username = ConfigurationReader.get("sales_manager_username");
                 password = ConfigurationReader.get("sales_manager_password");
                 loginPage.login(username, password);
                 break;
-            case "storemanager":
+            case "store manager":
                 username = ConfigurationReader.get("store_manager_username");
                 password = ConfigurationReader.get("store_manager_password");
                 loginPage.login(username, password);

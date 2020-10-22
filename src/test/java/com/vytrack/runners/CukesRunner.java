@@ -14,7 +14,6 @@ import org.junit.runner.RunWith;
         tags = "@wip"
 )
 public class CukesRunner {
-
 }
 
         // if we want to execute tags, which have two of them
@@ -24,6 +23,3 @@ public class CukesRunner {
         // Old Syntax = {"@login", "~@VYT-123"}
 
 
-
-//hjkldhfjs
-//ghjdfsa
