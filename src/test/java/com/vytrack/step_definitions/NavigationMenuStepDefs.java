@@ -3,6 +3,7 @@ package com.vytrack.step_definitions;
 import com.vytrack.pages.ContactsPage;
 import com.vytrack.pages.DashboardPage;
 import com.vytrack.utilities.BrowserUtils;
+import com.vytrack.utilities.ConfigurationReader;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -54,6 +55,29 @@ public class NavigationMenuStepDefs {
         Integer actualNumber =Integer.parseInt(contactsPage.pageNumber.getAttribute("value"));
 
         Assert.assertEquals(expectedPageNum,actualNumber);
+    }
+
+    @Then("the user should see {string} as a page title")
+    public void the_user_should_see_as_a_page_title(String page) {
+
+
+
+    }
+
+    @When("the user navigate to {string} page")
+    public void the_user_navigate_to_page(String page) {
+        DashboardPage dashboardPage = new DashboardPage();
+        switch(page.toLowerCase()) {
+            case "vehicles":
+                dashboardPage.navigateToModule("Fleet","Vehicles");
+                break;
+            case "campaigns":
+                dashboardPage.navigateToModule("Marketing","Campaigns");
+                break;
+            case "Calendar Events":
+                dashboardPage.navigateToModule("Activities","Calendar Events");
+                break;
+        }
     }
 
 
